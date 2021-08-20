@@ -1,12 +1,8 @@
-import placeholder from '../img/placeholder.png';
-
-const GameItem = () => {
+const GameItem = (props) => {
   return (
     <div className="game-item">
-      <p>Game Title</p>
-      <img src={placeholder} alt="placeholder" />
-      <p>Price: 0.00$</p>
-      <button>Add to Cart</button>
+      <img src={props.gameImg} alt="game-item" />
+      <p className="game-price">BUY - {props.price}$</p>
     </div>
   );
 };
