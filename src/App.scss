@@ -1,6 +1,6 @@
 @import './styles/base';
 
-#game-item-cnt {
+#game-item-ctn {
   background-color: $bg-color;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

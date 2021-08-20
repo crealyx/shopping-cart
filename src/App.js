@@ -5,14 +5,19 @@ import { Route, Switch } from 'react-router-dom';
 import GAMES from './games';
 function App() {
   const gameItems = GAMES.map((game) => (
-    <GameItem gameImg={game.image} price={game.price} />
+    <GameItem
+      key={game.id}
+      gameTitle={game.name}
+      gameImg={game.image}
+      price={game.price}
+    />
   ));
   return (
     <div className="App">
       <Navbar></Navbar>
       <Switch>
         <Route path="/" exact>
-          <div id="game-item-cnt">{gameItems}</div>
+          <div id="game-item-ctn">{gameItems}</div>
         </Route>
         <Route path="/cart">
           <Cart></Cart>
