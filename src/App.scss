@@ -1,0 +1,10 @@
+#game-item-cnt {
+  background-color: rgb(100, 0, 0);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(2, 1fr);
+  padding: 0, 20px;
+  align-content: center;
+  justify-items: center;
+  min-height: 89vh;
+}

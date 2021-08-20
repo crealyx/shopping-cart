@@ -1,0 +1,19 @@
+nav {
+  background-color: rgb(255, 255, 255);
+}
+#navbar {
+  display: flex;
+  font-size: 3rem;
+  justify-content: flex-end;
+  padding: 20px;
+  align-items: center;
+  border-bottom: 5px solid rgb(0, 0, 0);
+}
+#home-button {
+  margin-right: 50px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  &:hover {
+    color: rgb(255, 255, 255);
+  }
+}
