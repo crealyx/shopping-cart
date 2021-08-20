@@ -1,13 +1,20 @@
-import { useRef, useState } from 'react';
-
+import { useRef, useContext, useState } from 'react';
+import CartContext from '../cart-context';
 const GameInfo = (props) => {
+  const cartCtx = useContext(CartContext);
   const gameAmount = useRef(0);
   const [total, setTotal] = useState(props.price);
   const addToCartHandler = () => {
-    console.log(props.gameTitle);
-    console.log(total);
+    const totalAmount = Number(gameAmount.current.value);
+    const currentGame = {
+      title: props.gameTitle,
+      price: props.price,
+      amount: totalAmount,
+    };
+    cartCtx.addGame(currentGame);
+    cartCtx.changeTotalAmount(totalAmount);
   };
-  const totalAmountHandler = () => {
+  const totalPriceHandler = () => {
     setTotal(gameAmount.current.value * props.price);
   };
   return (
@@ -20,7 +27,7 @@ const GameInfo = (props) => {
           type="number"
           ref={gameAmount}
           defaultValue="1"
-          onChange={totalAmountHandler}
+          onChange={totalPriceHandler}
         />
         <p>Total Price:{total}</p>
         <button onClick={addToCartHandler}>Add to Cart</button>

@@ -6,14 +6,12 @@ const Navbar = () => {
     <nav>
       <ul id="navbar">
         <img src={logo} alt="logo" />
-        <div className="button-ctn">
-          <NavLink to="/" id="home-button">
-            HOME
-          </NavLink>
-          <NavLink to="/cart">
-            <CartButton />
-          </NavLink>
-        </div>
+        <NavLink to="/" className="home-button">
+          Games
+        </NavLink>
+        <NavLink to="/cart">
+          <CartButton />
+        </NavLink>
       </ul>
     </nav>
   );
