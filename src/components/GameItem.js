@@ -4,7 +4,10 @@ import GameInfo from './GameInfo';
 const GameItem = (props) => {
   const [gameInfo, setGameInfo] = useState(false);
   const toggleInfoHandler = (e) => {
-    if (e.target.classList.contains('overlay-active')) {
+    if (
+      e.target.classList.contains('overlay-active') ||
+      e.target.classList.contains('add-to-cart-btn')
+    ) {
       setGameInfo(false);
     } else {
       setGameInfo(true);

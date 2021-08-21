@@ -27,9 +27,13 @@ const Cart = () => {
           Total Price:
           {cartCtx.totalPrice}$
         </p>
-        <NavLink id="checkout-btn" to="/checkout">
-          CHECKOUT
-        </NavLink>
+        {cartCtx.gamesInCart.length !== 0 ? (
+          <NavLink id="checkout-btn" to="/checkout">
+            CHECKOUT
+          </NavLink>
+        ) : (
+          <h1 id="checkout-btn">CHECKOUT</h1>
+        )}
       </div>
     </div>
   );

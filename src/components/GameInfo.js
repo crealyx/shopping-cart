@@ -4,7 +4,7 @@ const GameInfo = (props) => {
   const cartCtx = useContext(CartContext);
   const gameAmount = useRef(0);
   const [total, setTotal] = useState(props.price);
-  const addToCartHandler = () => {
+  const addToCartHandler = (e) => {
     const totalAmount = Number(gameAmount.current.value);
     const currentGame = {
       title: props.gameTitle,
@@ -14,6 +14,7 @@ const GameInfo = (props) => {
     };
     cartCtx.addGame(currentGame);
     cartCtx.changeTotalAmount(totalAmount);
+    props.toggleInfo(e);
   };
   const totalPriceHandler = () => {
     setTotal(gameAmount.current.value * props.price);
@@ -31,7 +32,10 @@ const GameInfo = (props) => {
           onChange={totalPriceHandler}
         />
         <p>Total Price:{total}$</p>
-        <button className="add-to-cart-btn" onClick={addToCartHandler}>
+        <button
+          className="add-to-cart-btn"
+          onClick={(e) => addToCartHandler(e)}
+        >
           Add to Cart
         </button>
       </div>
