@@ -1,7 +1,7 @@
 .cart-item {
   box-shadow: 0px 0px 3px 2px #000000;
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   display: flex;
   padding: 10px;
   margin: 5px;
@@ -23,8 +23,8 @@
     width: 80px;
     font-size: 1rem;
     height: 40px;
-    background-color: rgb(2, 2, 2);
-    color: white;
+    background-color: rgb(253, 253, 253);
+    color: rgb(0, 0, 0);
     border: none;
     &:hover {
       background-color: rgb(173, 2, 2);

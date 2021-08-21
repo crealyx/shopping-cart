@@ -5,7 +5,7 @@ const Checkout = (props) => {
   useEffect(() => {
     cartCtx.setGames([]);
     cartCtx.updateTotalAmount();
-  }, []);
+  }, [cartCtx]);
   return (
     <div className={props.className}>
       <h1>Thanks for choosing CTEAM, Enjoy your purchase!</h1>
