@@ -10,6 +10,7 @@ const GameInfo = (props) => {
       title: props.gameTitle,
       price: props.price,
       amount: totalAmount,
+      total: total,
     };
     cartCtx.addGame(currentGame);
     cartCtx.changeTotalAmount(totalAmount);

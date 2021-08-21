@@ -1,5 +1,8 @@
 @import './styles/base';
-
+.app {
+  background-color: $bg-color;
+  min-height: 89vh;
+}
 #game-item-ctn {
   background-color: $bg-color;
   display: grid;
