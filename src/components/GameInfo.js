@@ -30,8 +30,10 @@ const GameInfo = (props) => {
           defaultValue="1"
           onChange={totalPriceHandler}
         />
-        <p>Total Price:{total}</p>
-        <button onClick={addToCartHandler}>Add to Cart</button>
+        <p>Total Price:{total}$</p>
+        <button className="add-to-cart-btn" onClick={addToCartHandler}>
+          Add to Cart
+        </button>
       </div>
     </div>
   );

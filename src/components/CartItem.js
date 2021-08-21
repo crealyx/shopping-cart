@@ -6,7 +6,6 @@ const CartItem = (props) => {
   const [amount, setAmount] = useState(props.amount);
   const changeAmountHandler = (e) => {
     const newAmount = Number(e.target.value);
-    console.log(newAmount);
     setAmount(newAmount);
     cartCtx.changePrice(props.game, newAmount);
     cartCtx.updateTotalAmount();

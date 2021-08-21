@@ -34,7 +34,6 @@ export function CartContextProvider(props) {
   };
   const changePriceHandler = (game, amount) => {
     const matchedGame = games.find((cartGame) => cartGame.title === game);
-    console.log(matchedGame);
     if (matchedGame) {
       matchedGame.amount = amount;
       matchedGame.total = matchedGame.amount * matchedGame.price;
@@ -48,12 +47,10 @@ export function CartContextProvider(props) {
     setTotal((prev) => (prev += amount));
   };
   const deleteItemHandler = (gameItem) => {
-    console.log('removed');
     const matchedGame = games.find((cartGame) => cartGame.title === gameItem);
     const newItems = context.gamesInCart.filter(
       (game) => game.title !== matchedGame.title
     );
-    console.log(matchedGame);
     context.calcTotalPrice();
     context.updateGames(newItems);
   };
@@ -64,7 +61,6 @@ export function CartContextProvider(props) {
       let calculatedTotal = 0;
       context.gamesInCart.forEach((game) => {
         calculatedTotal += game.amount;
-        console.log(calculatedTotal);
       });
       setTotal(calculatedTotal);
     }

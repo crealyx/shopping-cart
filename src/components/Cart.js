@@ -4,7 +4,6 @@ import CartContext from '../cart-context';
 import { v4 as uuidv4 } from 'uuid';
 import { NavLink } from 'react-router-dom';
 const Cart = () => {
-  console.log('sa');
   const cartCtx = useContext(CartContext);
   const cartItems = cartCtx.gamesInCart.map((game) => (
     <CartItem
@@ -14,7 +13,6 @@ const Cart = () => {
       amount={game.amount}
     />
   ));
-  console.log(cartItems);
   useEffect(() => {
     cartCtx.calcTotalPrice();
     cartCtx.updateTotalAmount();
